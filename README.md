@@ -2,8 +2,7 @@
 (학사학위논문) 저조도 이미지 개선을 위한 GLADNet + CBAM 네트워크 구현
 
 ## Update
-2022.07 : 최초 구현
-
+2022.07 : 최초 구현<br>
 2024.01 : pytorch 구현
 
 ## References
