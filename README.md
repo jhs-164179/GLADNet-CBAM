@@ -3,10 +3,10 @@
 
 ## Updates
 **June 2022 (version 1.0)**
-- 최초 구현
+- Initial release
 
 **January 2024 (version 1.1)**
-- pytorch 구현
+- Framework update
 
 ## Experiment Results
 
