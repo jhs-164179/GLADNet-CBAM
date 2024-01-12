@@ -1,10 +1,12 @@
 # Undergraduate-thesis
 (학사학위논문) 저조도 이미지 개선을 위한 GLADNet + CBAM 네트워크 구현<br>
-데이터셋: https://drive.google.com/file/d/18T0S7jLP987QajLUVjYNDwIMKmHAdZQx/view
 
 ## Updates
-June 2022 (version 1.0) 최초 구현<br>
-January 2024 (version 1.1) pytorch 구현
+**June 2022 (version 1.0)**
+- 최초 구현
+
+**January 2024 (version 1.1)**
+- pytorch 구현
 
 ## Experiment Results
 
