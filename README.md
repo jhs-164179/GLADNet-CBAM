@@ -1,6 +1,5 @@
 # Undergraduate-thesis
-(학사학위논문)
-저조도 이미지 개선을 위한 GLADNet + CBAM 네트워크 구현
+**(학사학위논문)** 저조도 이미지 개선을 위한 GLADNet + CBAM 네트워크 구현
 
 
 
