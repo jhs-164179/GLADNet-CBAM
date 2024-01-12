@@ -7,6 +7,7 @@
 
 **January 2024 (version 1.1)**
 - Framework update
+- Code optimization
 
 ## Experiment Results
 
