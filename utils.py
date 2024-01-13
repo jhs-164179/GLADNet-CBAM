@@ -1,60 +1,57 @@
+import os
 from PIL import Image
+import torch
 from torch.utils.data import Dataset
 
 
+def check_path(path):
+    if not os.path.exists(path):
+        os.makedirs(path)
+
+
+def load_imgs(path):
+    Image.open(path)
+
+
+def save_imgs(path):
+    pass
+
+
 class CustomDataset(Dataset):
-    def __init__(self, ):
-
-
-# Train / Validation Split (70% : 30%)
-train_len = int(len(train_df) * 0.7)
-val_df = train_df.iloc[train_len:]
-train_df = train_df.iloc[:train_len]
-train_labels = train_df.iloc[:, 2:].values.reshape(-1, 4, 4)
-val_labels = val_df.iloc[:, 2:].values.reshape(-1, 4, 4)
-(train_labels.shape, val_labels.shape)
-
-
-class CustomDataset(Dataset):
-    def __init__(self, img_path_list, label_list, transform=None):
-        self.img_path_list = img_path_list
-        self.label_list = label_list
+    def __init__(self, img_paths, label_paths, transform=None):
+        self.img_paths = img_paths
+        self.label_paths = label_paths
         self.transform = transform
 
-    def __getitem__(self, index):
-        img_path = self.img_path_list[index]
+    def __getitem(self, index):
+        img_path = self.img_paths[index]
 
-        # PIL 이미지로 불러오기
-        image = Image.open(img_path).convert("RGB")
+        img = Image.open(img_path).convert('RGB')
         if self.transform is not None:
-            image = self.transform(image)
+            img = self.transform(img)
 
-        if self.label_list is not None:
-            label = torch.tensor(self.label_list[index], dtype=torch.long) - 1
-            return image, label
+        if self.label_paths is not None:
+            label = torch.tensor(self.label_paths[index], dtype=torch.float) - 1
+            return img, label
         else:
-            return image
+            return img
 
     def __len__(self):
-        return len(self.img_path_list)
+        return len(self.img_paths)
 
 
-train_transform = transforms.Compose([
-    transforms.ToTensor(),
-    transforms.Resize((CFG['IMG_SIZE'], CFG['IMG_SIZE'])),
-    transforms.Normalize(mean=[0.485, 0.456, 0.406], std=[0.229, 0.224, 0.225])
-])
+class LowlightEnhance(object):
+    def __init__(self, **kwargs):
+        self.model = kwargs.model
 
-test_transform = transforms.Compose([
-    transforms.ToTensor(),
-    transforms.Resize((CFG['IMG_SIZE'], CFG['IMG_SIZE'])),
-    transforms.Normalize(mean=[0.485, 0.456, 0.406], std=[0.229, 0.224, 0.225])
-])
-train_dataset = CustomDataset(train_df['img_path'].values, train_labels, train_transform)
-train_loader = DataLoader(train_dataset, batch_size=CFG['BATCH_SIZE'], shuffle=True, num_workers=0)
+    def evaluate(self):
+        pass
 
-val_dataset = CustomDataset(val_df['img_path'].values, val_labels, test_transform)
-val_loader = DataLoader(val_dataset, batch_size=CFG['BATCH_SIZE'], shuffle=False, num_workers=0)
+    def train(self):
+        pass
 
-test_dataset = CustomDataset(test_df['img_path'].values, None, test_transform)
-test_loader = DataLoader(test_dataset, batch_size=CFG['BATCH_SIZE'], shuffle=False, num_workers=0)
+    def save(self):
+        pass
+
+    def test(self):
+        pass
