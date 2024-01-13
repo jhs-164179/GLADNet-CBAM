@@ -164,15 +164,15 @@ class DR(nn.Module):
         return x
 
 
-class GLADNet(nn.Module):
+class GLADNetCBAM(nn.Module):
     def __init__(self):
-        super(GLADNet, self).__init__()
+        super(GLADNetCBAM, self).__init__()
         self.IDE = IDE()
         self.DR = DR(input_dim=64)
 
     def forward(self, x):
         inp_ = x
-        x = F.interpolate(inp_, (96, 96))
+        # x = F.interpolate(inp_, (96, 96))
         x = self.IDE(x)
         x = F.interpolate(x, (inp_.shape[2], inp_.shape[3]))
         x = torch.cat([x, inp_], dim=1)
