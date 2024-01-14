@@ -1,59 +1,72 @@
 from torch import nn
 from torch.nn import functional as F
+from CBAM import CBAM
 
 
-# Illumination Distribution Estimation
-class IDE(nn.Module):
+# Illumination Distribution Estimation(GLADNet-CBAM)
+class IDECBAM(nn.Module):
     def __init__(self):
-        super(IDE, self).__init__()
+        super(IDECBAM, self).__init__()
         self.p_conv1 = nn.Sequential(
             nn.Conv2d(in_channels=3, out_channels=64, kernel_size=3, stride=2, padding=1),
-            nn.ReLU()
+            nn.ReLU(),
+            CBAM(in_channels=64, out_channels=64)
         )
         self.p_conv2 = nn.Sequential(
             nn.Conv2d(in_channels=64, out_channels=64, kernel_size=3, stride=2, padding=1),
-            nn.ReLU()
+            nn.ReLU(),
+            CBAM(in_channels=64, out_channels=64)
         )
         self.p_conv3 = nn.Sequential(
             nn.Conv2d(in_channels=64, out_channels=64, kernel_size=3, stride=2, padding=1),
-            nn.ReLU()
+            nn.ReLU(),
+            CBAM(in_channels=64, out_channels=64)
         )
         self.p_conv4 = nn.Sequential(
             nn.Conv2d(in_channels=64, out_channels=64, kernel_size=3, stride=2, padding=1),
-            nn.ReLU()
+            nn.ReLU(),
+            CBAM(in_channels=64, out_channels=64)
         )
         self.p_conv5 = nn.Sequential(
             nn.Conv2d(in_channels=64, out_channels=64, kernel_size=3, stride=2, padding=1),
-            nn.ReLU()
+            nn.ReLU(),
+            CBAM(in_channels=64, out_channels=64)
         )
         self.p_conv6 = nn.Sequential(
             nn.Conv2d(in_channels=64, out_channels=64, kernel_size=3, stride=2, padding=1),
-            nn.ReLU()
+            nn.ReLU(),
+            CBAM(in_channels=64, out_channels=64)
         )
 
         self.p_deconv1 = nn.Sequential(
             nn.Conv2d(in_channels=64, out_channels=64, kernel_size=3, stride=1, padding=1),
-            nn.ReLU()
+            nn.ReLU(),
+            CBAM(in_channels=64, out_channels=64)
         )
         self.p_deconv2 = nn.Sequential(
             nn.Conv2d(in_channels=64, out_channels=64, kernel_size=3, stride=1, padding=1),
-            nn.ReLU()
+            nn.ReLU(),
+            CBAM(in_channels=64, out_channels=64)
         )
         self.p_deconv3 = nn.Sequential(
             nn.Conv2d(in_channels=64, out_channels=64, kernel_size=3, stride=1, padding=1),
-            nn.ReLU()
+            nn.ReLU(),
+            CBAM(in_channels=64, out_channels=64)
         )
         self.p_deconv4 = nn.Sequential(
             nn.Conv2d(in_channels=64, out_channels=64, kernel_size=3, stride=1, padding=1),
-            nn.ReLU()
+            nn.ReLU(),
+            CBAM(in_channels=64, out_channels=64)
         )
         self.p_deconv5 = nn.Sequential(
             nn.Conv2d(in_channels=64, out_channels=64, kernel_size=3, stride=1, padding=1),
-            nn.ReLU()
+            nn.ReLU(),
+            CBAM(in_channels=64, out_channels=64)
         )
         self.p_deconv6 = nn.Sequential(
             nn.Conv2d(in_channels=64, out_channels=64, kernel_size=3, stride=1, padding=1),
-            nn.ReLU()
+            nn.ReLU(),
+            CBAM(in_channels=64, out_channels=64)
         )
 
     def forward(self, x):

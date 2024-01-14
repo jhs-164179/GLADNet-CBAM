@@ -2,13 +2,13 @@ import torch
 from torch import nn
 from torch.nn import functional as F
 
-from modules import IDE, DR
+from modules import IDECBAM, DR, CBAM
 
 
-class GLADNet(nn.Module):
+class GLADNetCBAM(nn.Module):
     def __init__(self):
-        super(GLADNet, self).__init__()
-        self.IDE = IDE()
+        super(GLADNetCBAM, self).__init__()
+        self.IDE = IDECBAM()
         self.DR = DR()
 
     def forward(self, inp_):
