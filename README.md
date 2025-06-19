@@ -22,4 +22,4 @@ bash test_gladnet.sh # for gladnet
 ## Acknowledgement
 Thanks for great code: <br>
 [GLADNet](https://github.com/weichen582/GLADNet). <br>
-[GLADNet 2.0]([https://github.com/weichen582/GLADNet](https://github.com/abhishek-choudharys/GLADNet). <br>
+[GLADNet 2.0](https://github.com/weichen582/GLADNet](https://github.com/abhishek-choudharys/GLADNet). <br>
