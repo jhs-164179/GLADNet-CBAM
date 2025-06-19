@@ -20,6 +20,6 @@ bash test_gladnet.sh # for gladnet
 [2] Woo, S., Park, J., Lee, J. Y., & Kweon, I. S. (2018). Cbam: Convolutional block attention module. In Proceedings of the European conference on computer vision (ECCV) (pp. 3-19). <br>
 
 ## Acknowledgement
-Thanks for great code: <br>
+Thanks for dataset and great code: <br>
 [GLADNet](https://github.com/weichen582/GLADNet). <br>
-[GLADNet](https://github.com/abhishek-choudharys/GLADNet). <br>
+[GLADNet 2.0](https://github.com/abhishek-choudharys/GLADNet). <br>
