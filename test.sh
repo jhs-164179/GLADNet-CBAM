@@ -1,0 +1,1 @@
+python main.py --use_gpu 1 --gpu_idx 0 --gpu_mem 0.5 --phase test --test_dir /path/to/your/test/dir/ --save_dir /path/to/save/results/ --checkpoint_dir ./checkpoint_gladnetcbam --sample_dir ./sample_gladnetcbam

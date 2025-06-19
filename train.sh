@@ -1,0 +1,1 @@
+python main.py --use_gpu 1 --gpu_idx 0 --gpu_mem 0.8 --phase train --epoch 50 --batch_size 8 --patch_size 384 --eval_every_epoch 5 --checkpoint_dir ./checkpoint_gladnetcbam --sample_dir ./sample_gladnetcbam
